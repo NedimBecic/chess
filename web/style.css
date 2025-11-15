@@ -19,7 +19,6 @@ body {
   width: 100vw;
 }
 
-/* Left Sidebar - Engine Parameters */
 .left-sidebar {
   width: 280px;
   background-color: #2d2d2d;
@@ -103,7 +102,6 @@ body {
   background-color: #353535;
 }
 
-/* Center - Board Container */
 .board-container {
   flex: 1;
   display: flex;
@@ -161,7 +159,6 @@ img {
   background-color: #b58863;
 }
 
-/* Right Sidebar - Moves */
 .right-sidebar {
   width: 280px;
   background-color: #2d2d2d;

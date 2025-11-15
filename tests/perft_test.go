@@ -54,10 +54,6 @@ func TestPerftInitialBoard(t *testing.T) {
 			depth: 6,
 			nodes: 119060324,
 		},
-		// "depth7": {
-		// 	depth: 7,
-		// 	nodes: 3195901860,
-		// },
 	}
 
 	board := chess.NewBoardFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
@@ -97,10 +93,6 @@ func TestKiwipetePosition(t *testing.T) {
 			depth: 5,
 			nodes: 193690690,
 		}, 
-		// "depth6": {
-		// 	depth: 6,
-		// 	nodes: 8031647685,
-		// },
 	}
 
 	board := chess.NewBoardFromFEN("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq -")
