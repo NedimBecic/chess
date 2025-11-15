@@ -9,6 +9,14 @@ import (
 
 var board chess.Board
 
+func GetBoard() *chess.Board {
+	return &board
+}
+
+func SetBoard(b chess.Board) {
+	board = b
+}
+
 type GameState struct {
 	FEN        string   `json:"fen"`
 	MoveCount  int      `json:"move_count"`
