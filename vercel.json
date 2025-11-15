@@ -26,23 +26,7 @@
     },
     {
       "source": "/",
-      "destination": "/public/chess.html"
-    },
-    {
-      "source": "/chess.js",
-      "destination": "/public/chess.js"
-    },
-    {
-      "source": "/style.css",
-      "destination": "/public/style.css"
-    },
-    {
-      "source": "/js/:path*",
-      "destination": "/public/js/:path*"
-    },
-    {
-      "source": "/pieces/:path*",
-      "destination": "/public/pieces/:path*"
+      "destination": "/chess.html"
     }
   ]
 }
