@@ -1,33 +1,18 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/**/*.go",
-      "use": "@vercel/go"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/start",
-      "dest": "/api/start"
+    "version": 2,
+    "functions": {
+      "api/**/*.go": {
+        "runtime": "@vercel/go@3.1.0"
+      }
     },
-    {
-      "src": "/api/moves",
-      "dest": "/api/moves"
-    },
-    {
-      "src": "/api/move",
-      "dest": "/api/move"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/web/chess.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/web/$1"
-    }
-  ]
-}
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/web/chess.html"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/web/$1"
+      }
+    ]
+  }
