@@ -1,11 +1,29 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*.go": {
+    "api/start/index.go": {
+      "runtime": "@vercel/go@3.1.0"
+    },
+    "api/moves/index.go": {
+      "runtime": "@vercel/go@3.1.0"
+    },
+    "api/move/index.go": {
       "runtime": "@vercel/go@3.1.0"
     }
   },
   "rewrites": [
+    {
+      "source": "/api/start",
+      "destination": "/api/start/index"
+    },
+    {
+      "source": "/api/moves",
+      "destination": "/api/moves/index"
+    },
+    {
+      "source": "/api/move",
+      "destination": "/api/move/index"
+    },
     {
       "source": "/",
       "destination": "/public/chess.html"
