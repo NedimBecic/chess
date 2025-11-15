@@ -1,7 +1,13 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*.go": {
+    "api/start.go": {
+      "runtime": "@vercel/go@3.1.0"
+    },
+    "api/moves.go": {
+      "runtime": "@vercel/go@3.1.0"
+    },
+    "api/move.go": {
       "runtime": "@vercel/go@3.1.0"
     }
   },
