@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"chess/internal/chess"
-	"chess/internal/handlers"
+	"chess/chess"
+	"chess/handlers"
 	"net/http"
 )
 

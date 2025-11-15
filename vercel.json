@@ -1,18 +1,18 @@
 {
-    "version": 2,
-    "functions": {
-      "api/**/*.go": {
-        "runtime": "@vercel/go@3.1.0"
-      }
+  "version": 2,
+  "functions": {
+    "api/**/*.go": {
+      "runtime": "@vercel/go@3.1.0"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/web/chess.html"
     },
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "/web/chess.html"
-      },
-      {
-        "source": "/(.*)",
-        "destination": "/web/$1"
-      }
-    ]
-  }
+    {
+      "source": "/(.*)",
+      "destination": "/web/$1"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"chess/internal/handlers"
+	"chess/handlers"
 	"log"
 	"net/http"
 	"os"

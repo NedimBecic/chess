@@ -1,7 +1,7 @@
 package main
 
 import (
-	"chess/internal/chess"
+	"chess/chess"
 	"testing"
 )
 
