@@ -27,6 +27,7 @@ type MoveRequest struct {
 	From      string `json:"from"`
 	To        string `json:"to"`
 	Promotion string `json:"promotion,omitempty"`
+	FEN       string `json:"fen,omitempty"`
 }
 
 type MoveResponse struct {
@@ -102,6 +103,12 @@ func HandlePostMove(w http.ResponseWriter, r *http.Request) {
 	if err := json.NewDecoder(r.Body).Decode(&moveReq); err != nil {
 		http.Error(w, "Invalid request body", http.StatusBadRequest)
 		return
+	}
+
+	if moveReq.FEN != "" {
+		board = *chess.NewBoardFromFEN(moveReq.FEN)
+	} else {
+		board = *chess.NewBoardFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
 	}
 
 	var move chess.Move

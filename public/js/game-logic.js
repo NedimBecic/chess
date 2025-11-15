@@ -9,6 +9,8 @@ import {
   clearMovingPiece,
   toggleMoveColor,
   getCurrentMoveColor,
+  getCurrentFEN,
+  setCurrentFEN,
 } from "./state.js";
 import { addMoveToHistory } from "./move-history.js";
 import { setBoardView } from "./board-view.js";
@@ -71,9 +73,13 @@ async function attemptMove(fromSquare, toSquare) {
   }
 
   try {
-    const response = await apiMakeMove(fromNotation, toNotation, promotion);
+    const currentFEN = getCurrentFEN();
+    const response = await apiMakeMove(fromNotation, toNotation, promotion, currentFEN);
 
     if (response && response.success) {
+      if (response.fen) {
+        setCurrentFEN(response.fen);
+      }
       await applyMove(
         fromSquare,
         toSquare,

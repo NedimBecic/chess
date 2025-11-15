@@ -8,6 +8,7 @@ export let initialSquare = null;
 export let moveHistory = [];
 export let moveNumber = 1;
 export let playerViewColor = COLOR.WHITE;
+export let currentFEN = null;
 
 export function setBoard(boardElement) {
   board = boardElement;
@@ -96,5 +97,17 @@ export function getMoveNumber() {
 }
 
 export function resetMoveNumber() {
-  moveNumber = 1;
+	moveNumber = 1;
+}
+
+export function setCurrentFEN(fen) {
+	currentFEN = fen;
+}
+
+export function getCurrentFEN() {
+	return currentFEN;
+}
+
+export function resetFEN() {
+	currentFEN = null;
 }

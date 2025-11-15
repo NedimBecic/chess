@@ -3,6 +3,7 @@ import { setBoardView } from "./board-view.js";
 import { resetBoard } from "./board-manipulation.js";
 import { clearMoveHistory } from "./move-history.js";
 import { startGame } from "./api.js";
+import { setCurrentFEN, resetFEN } from "./state.js";
 
 export function initializeUIControls() {
   const playerColorSelect = document.getElementById("player-color");
@@ -28,12 +29,14 @@ export function initializeUIControls() {
   if (newGameBtn) {
     newGameBtn.addEventListener("click", async function () {
       try {
-        await startGame();
+        const response = await startGame();
+        if (response && response.fen) {
+          setCurrentFEN(response.fen);
+        }
         resetBoard();
         clearMoveHistory();
       } catch (error) {
         console.error("Failed to start game:", error);
-        alert("Failed to start game. Please try again.");
       }
     });
   }

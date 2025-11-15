@@ -55,10 +55,13 @@ export async function getGameState() {
   });
 }
 
-export async function makeMove(from, to, promotion = null) {
+export async function makeMove(from, to, promotion = null, fen = null) {
   const body = { from, to };
   if (promotion) {
     body.promotion = promotion;
+  }
+  if (fen) {
+    body.fen = fen;
   }
   return apiRequest("/move", {
     method: "POST",
