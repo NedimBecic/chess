@@ -1,36 +1,17 @@
 {
-  "version": 2,
-  "functions": {
-    "api/start.go": {
-      "runtime": "@vercel/go@3.1.0"
+    "functions": {
+      "api/**/*.go": {
+        "runtime": "@vercel/go@3.1.0"
+      }
     },
-    "api/moves.go": {
-      "runtime": "@vercel/go@3.1.0"
-    },
-    "api/move.go": {
-      "runtime": "@vercel/go@3.1.0"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/web/chess.html"
-    },
-    {
-      "source": "/chess.js",
-      "destination": "/web/chess.js"
-    },
-    {
-      "source": "/style.css",
-      "destination": "/web/style.css"
-    },
-    {
-      "source": "/js/:path*",
-      "destination": "/web/js/:path*"
-    },
-    {
-      "source": "/pieces/:path*",
-      "destination": "/web/pieces/:path*"
-    }
-  ]
-}
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/web/$1"
+      },
+      {
+        "source": "/",
+        "destination": "/web/chess.html"
+      }
+    ]
+  }
